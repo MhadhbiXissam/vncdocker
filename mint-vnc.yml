@@ -1,0 +1,19 @@
+# Use the Ubuntu base image
+FROM ubuntu:latest
+RUN apt-get update && apt-get install -y tzdata && \
+    echo "tzdata tzdata/Areas select Europe" | debconf-set-selections && \
+    echo "tzdata tzdata/Zones/Europe select Berlin" | debconf-set-selections && \
+    dpkg-reconfigure -f noninteractive tzdata
+RUN apt-get update &&  apt-get install -y \
+    keyboard-configuration && \
+    echo "keyboard-configuration keyboard-configuration/layoutcode string us" | debconf-set-selections && \
+    echo "keyboard-configuration keyboard-configuration/xkb-keymap select us" | debconf-set-selections && \
+    dpkg-reconfigure -f noninteractive keyboard-configuration
+
+# Add Linux Mint repository
+RUN apt-get install -y cinnamon-desktop-environment
+
+
+RUN export USER=root
+RUN  apt-get update && apt-get install -y sudo 
+RUN sudo apt-get update && apt-get install -y x11vnc xvfb novnc
