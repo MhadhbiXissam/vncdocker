@@ -2,7 +2,7 @@
 
 # Install vnc  : 
 ```bash
-sudo apt-get install novnc
+sudo apt-get update && apt-get install -y x11vnc xvfb novnc
 ```
 # Run x11vnc and novnc from single command  : 
 ```bash
