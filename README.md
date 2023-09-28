@@ -4,15 +4,25 @@
 ```bash
 sudo apt-get install novnc
 ```
+# Run x11vnc and novnc from single command  : 
+```bash
+x11vnc_output=$(x11vnc -quiet -cursor -bg -localhost -nopw -forever -shared --multiptr) && port=$(echo "$x11vnc_output" | grep -oP 'PORT=\K\d+') && echo "PORT value: $port" && /usr/share/novnc/utils/launch.sh --vnc localhost:$port
+```
+
+
+# run boths eperatly : 
+
 ## Run vnc server : 
 ```bash
 x11vnc -quiet -cursor  -bg -localhost -nopw -forever -shared -rfbport 5900 --multiptr 
 ```
-# run novnc web client  : 
+## run novnc web client  : 
 ```bash
 /usr/share/novnc/utils/launch.sh --vnc localhost:5900
 ```
-" to avoid lang and keyboard settings  : 
+
+
+# to avoid lang and keyboard settings  : 
 ```bash
 FROM ubuntu:latest
 
