@@ -4,8 +4,11 @@
 ```bash
 sudo apt-get install novnc
 ```
-## Run vnc : 
+## Run vnc server : 
 ```bash
-nohup sudo x11vnc -display :0 -forever -shared -rfbport 5901 &
+x11vnc -quiet -cursor  -bg -localhost -nopw -forever -shared -rfbport 5901 --multiptr 
+```
+# run novnc web client  : 
+```bash
 /usr/share/novnc/utils/launch.sh --vnc localhost:5901
 ```
