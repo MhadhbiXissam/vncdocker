@@ -1,5 +1,5 @@
 # vncdocker
-# run all from single command  : 
+# Run all from single command (Install + Run ) : 
 ```bash
 sudo apt-get update && apt-get install -y x11vnc xvfb novnc && port_to_check=6080; pid=$(lsof -t -i:$port_to_check); if [ -n "$pid" ]; then echo "Process using port $port_to_check found with PID: $pid"; kill $pid; echo "Process with PID $pid terminated."; else echo "No process found using port $port_to_check."; fi && x11vnc_output=$(x11vnc -quiet -cursor -bg -localhost -nopw -forever -shared --multiptr) && port=$(echo "$x11vnc_output" | grep -oP 'PORT=\K\d+') && echo "PORT value: $port" && /usr/share/novnc/utils/launch.sh --vnc localhost:$port
 
