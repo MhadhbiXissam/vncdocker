@@ -20,6 +20,10 @@ x11vnc -quiet -cursor  -bg -localhost -nopw -forever -shared -rfbport 5900 --mul
 ```bash
 /usr/share/novnc/utils/launch.sh --vnc localhost:5900
 ```
+# on none display machines  : 
+```bash
+Xvfb :1 -screen 0 1024x768x16 & fluxbox & x11vnc -display :1  -quiet -cursor  -bg -localhost -nopw -forever -shared --multiptr -create
+```
 
 
 # to avoid lang and keyboard settings  : 
