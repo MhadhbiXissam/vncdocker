@@ -7,7 +7,7 @@ sudo apt-get update && apt-get install -y x11vnc xvfb novnc && port_to_check=608
 
 # Install vnc  : 
 ```bash
-sudo apt-get update && apt-get install -y x11vnc xvfb novnc
+sudo apt-get update && apt-get install -y x11vnc xvfb novnc  xserver-xephyr
 ```
 # Run x11vnc and novnc from single command  : 
 ```bash
