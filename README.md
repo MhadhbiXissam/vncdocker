@@ -24,7 +24,10 @@ x11vnc -quiet -cursor  -bg -localhost -nopw -forever -shared -rfbport 5900 --mul
 ```bash
 Xvfb :1 -screen 0 1024x768x16 & fluxbox & x11vnc -display :1  -quiet -cursor  -bg -localhost -nopw -forever -shared --multiptr -create
 ```
-
+# kill any process that uses port 6080 : 
+```bash
+port_to_check=6080; pid=$(lsof -t -i:$port_to_check); if [ -n "$pid" ]; then echo "Process using port $port_to_check found with PID: $pid"; kill $pid; echo "Process with PID $pid terminated."; else echo "No process found using port $port_to_check."; fi
+```
 
 # to avoid lang and keyboard settings  : 
 ```bash
