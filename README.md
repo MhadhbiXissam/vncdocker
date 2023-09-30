@@ -49,3 +49,17 @@ RUN apt-get update &&  apt-get install -y \
     dpkg-reconfigure -f noninteractive keyboard-configuration
 
 ```
+# install scrcpy :  screen your android into pc and use mouse and keyboard  : 
+```bash
+sudo apt install scrcpy
+```
+steps : 
+*    enable developer mode
+*    connect phone to usb and enable allow data
+*    from terminal  :
+```bash
+scrcpy
+```
+
+
+
