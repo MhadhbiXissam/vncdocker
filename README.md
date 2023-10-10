@@ -1,5 +1,5 @@
-# vncdocker
-# Run all from single command (Install + Run ) : 
+
+# set up git login autoamticlly  : 
 ```bash
 export GIT_USER="...."
 export GITPASS="....."
