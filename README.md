@@ -5,7 +5,7 @@
 
 # Create env 
 ```bash
-conda create --name py3.7 python3.7
+conda create --name py3.7 python=3.7
 ```
 
 # Set up the env as default env  : 
